@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ho Sushi Bar – Sushi em Moema, São Paulo</title>
+  <meta name="description" content="Ho Sushi Bar, o melhor sushi de Moema, São Paulo. Culinária japonesa autêntica, ambiente sofisticado. Aberto de segunda a sábado das 10h às 22h. Reserve já pelo WhatsApp." />
+  <meta name="keywords" content="sushi moema, sushi são paulo, ho sushi bar, japonês moema, restaurante japonês SP" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ho Sushi Bar – Moema, São Paulo" />
+  <meta property="og:description" content="Culinária japonesa autêntica no coração de Moema. Ambiente sofisticado, ingredientes frescos." />
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Schema.org LocalBusiness (ajuda o Google a indexar) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Ho Sushi Bar",
+    "image": "",
+    "description": "Restaurante japonês especializado em sushi, localizado em Moema, São Paulo.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR",
+      "streetAddress": "Moema"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -23.598,
+      "longitude": -46.664
+    },
+    "telephone": "+5511973530654",
+    "url": "",
+    "servesCuisine": "Japanese",
+    "priceRange": "$$",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "10:00",
+        "closes": "22:00"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0a0a0a;
+      --dark:    #111111;
+      --card:    #181818;
+      --border:  #2a2a2a;
+      --gold:    #c9a84c;
+      --gold-lt: #e8c97a;
+      --red:     #c0392b;
+      --white:   #f5f0e8;
+      --gray:    #888;
+      --font-jp: 'Noto Serif JP', 'Georgia', serif;
+      --font-en: 'Cormorant Garamond', 'Times New Roman', serif;
+      --font-ui: 'Inter', 'Helvetica Neue', sans-serif;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Noto+Serif+JP:wght@200;300;400&family=Inter:wght@300;400&display=swap');
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-en);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--font-jp);
+      font-weight: 300;
+      font-size: 1.25rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      background:
+        radial-gradient(ellipse at 50% 60%, rgba(201,168,76,0.07) 0%, transparent 65%),
+        linear-gradient(180deg, #0a0a0a 0%, #0f0c08 100%);
+      overflow: hidden;
+    }
+
+    /* Decorative circles */
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border: 1px solid rgba(201,168,76,0.08);
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 820px; height: 820px;
+      border: 1px solid rgba(201,168,76,0.04);
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-kana {
+      font-family: var(--font-jp);
+      font-weight: 200;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      letter-spacing: 0.6em;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-family: var(--font-en);
+      font-weight: 300;
+      font-size: clamp(3rem, 8vw, 6rem);
+      letter-spacing: 0.12em;
+      line-height: 1;
+      margin-bottom: 0.3em;
+      position: relative;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero-sub {
+      font-family: var(--font-ui);
+      font-weight: 300;
+      font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0 auto 3rem;
+      width: fit-content;
+      position: relative;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+    .divider::after { background: linear-gradient(270deg, transparent, var(--gold)); }
+    .divider-icon { color: var(--gold); font-size: 1rem; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      transition: background 0.3s, color 0.3s;
+      position: relative;
+    }
+    .btn:hover { background: var(--gold); color: var(--black); }
+
+    /* ── Section Base ── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: var(--font-en);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .section-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── About ── */
+    .about { background: var(--dark); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: rgba(245,240,232,0.75);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .kanji-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .kanji {
+      font-family: var(--font-jp);
+      font-weight: 200;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+    }
+
+    .kanji-label {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    /* ── Menu highlight ── */
+    .menu { background: var(--black); }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .menu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      transition: border-color 0.3s;
+      text-align: center;
+    }
+
+    .menu-card:hover { border-color: var(--gold); }
+
+    .menu-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .menu-card h3 {
+      font-family: var(--font-en);
+      font-weight: 400;
+      font-size: 1.25rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+      color: var(--gold-lt);
+    }
+
+    .menu-card p {
+      font-family: var(--font-ui);
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ── Info ── */
+    .info { background: var(--dark); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .info-block {
+      border-left: 1px solid var(--gold);
+      padding-left: 1.5rem;
+    }
+
+    .info-block h3 {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .info-block p, .info-block a {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: rgba(245,240,232,0.75);
+      text-decoration: none;
+      display: block;
+      line-height: 1.8;
+    }
+
+    .info-block a:hover { color: var(--gold); }
+
+    /* ── CTA ── */
+    .cta {
+      background: linear-gradient(135deg, #0f0c08 0%, #1a120a 50%, #0a0a0a 100%);
+      text-align: center;
+      padding: 7rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '寿司';
+      font-family: var(--font-jp);
+      font-size: 18rem;
+      color: rgba(201,168,76,0.03);
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .cta h2 {
+      font-family: var(--font-en);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .cta p {
+      font-family: var(--font-ui);
+      font-weight: 300;
+      color: var(--gray);
+      margin-bottom: 2.5rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      position: relative;
+    }
+
+    .cta .btn { position: relative; }
+
+    /* ── Footer ── */
+    footer {
+      background: #050505;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem;
+      text-align: center;
+    }
+
+    footer .logo-ft {
+      font-family: var(--font-jp);
+      font-weight: 300;
+      font-size: 1.1rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      opacity: 0.5;
+      margin-bottom: 0.5rem;
+    }
+
+    footer p {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      color: #444;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .nav-links a { font-size: 0.7rem; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-visual { display: none; }
+
+      .menu-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 500px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#inicio">Ho 寿司</a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#horarios">Horários</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <p class="hero-kana">ほ 寿司 バー</p>
+    <h1>Ho <span>Sushi</span> Bar</h1>
+    <p class="hero-sub">Moema &nbsp;·&nbsp; São Paulo &nbsp;·&nbsp; Culinária Japonesa</p>
+    <div class="divider"><span class="divider-icon">✦</span></div>
+    <a href="https://wa.me/5511973530654?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva." class="btn" target="_blank" rel="noopener">
+      Reserve pelo WhatsApp
+    </a>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label">Nossa história</p>
+          <h2 class="section-title">Arte e tradição<br />em cada prato</h2>
+          <div class="section-line"></div>
+          <p>
+            No Ho Sushi Bar, cada peça é preparada com respeito à tradição japonesa e atenção aos mínimos detalhes. Utilizamos ingredientes frescos, selecionados diariamente, para oferecer uma experiência autêntica no coração de Moema.
+          </p>
+          <p>
+            Nosso ambiente combina a sofisticação do design contemporâneo com a serenidade da estética japonesa — o lugar ideal para um almoço de negócios ou um jantar especial.
+          </p>
+        </div>
+        <div class="about-visual">
+          <div class="kanji-block">
+            <div class="kanji">和</div>
+            <span class="kanji-label">Harmonia</span>
+          </div>
+          <div class="kanji-block">
+            <div class="kanji">美</div>
+            <span class="kanji-label">Beleza</span>
+          </div>
+          <div class="kanji-block">
+            <div class="kanji">味</div>
+            <span class="kanji-label">Sabor</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDÁPIO -->
+  <section class="menu" id="cardapio">
+    <div class="container">
+      <p class="section-label">O que servimos</p>
+      <h2 class="section-title">Destaques do Cardápio</h2>
+      <div class="section-line"></div>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <div class="menu-icon">🍣</div>
+          <h3>Nigiri & Sashimi</h3>
+          <p>Cortes precisos de peixe fresco, servidos sobre arroz temperado ou ao natural. Tradição pura.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-icon">🌊</div>
+          <h3>Uramaki & Temaki</h3>
+          <p>Rolls criativos com combinações exclusivas — do clássico Philadelphia ao especial da casa.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-icon">🍜</div>
+          <h3>Pratos Quentes</h3>
+          <p>Yakisoba, Missoshiru e entradas quentes para complementar sua experiência japonesa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section class="info" id="horarios">
+    <div class="container">
+      <p class="section-label">Informações</p>
+      <h2 class="section-title">Visite-nos</h2>
+      <div class="section-line"></div>
+      <div class="info-grid">
+
+        <div class="info-block">
+          <h3>Localização</h3>
+          <p>Moema</p>
+          <p>São Paulo – SP</p>
+          <a href="https://maps.google.com/?q=Ho+Sushi+Bar+Moema+São+Paulo" target="_blank" rel="noopener">
+            Ver no Google Maps →
+          </a>
+        </div>
+
+        <div class="info-block" id="contato">
+          <h3>Contato</h3>
+          <a href="https://wa.me/5511973530654" target="_blank" rel="noopener">(11) 97353-0654</a>
+          <a href="https://wa.me/5511973530654?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva." target="_blank" rel="noopener">
+            WhatsApp para reservas →
+          </a>
+        </div>
+
+        <div class="info-block">
+          <h3>Horários</h3>
+          <p>Segunda a Sábado</p>
+          <p>10:00 às 22:00</p>
+          <p style="margin-top:0.5rem; color:#555;">Domingos: fechado</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Pronto para uma experiência<br />autêntica?</h2>
+    <p>Faça sua reserva agora pelo WhatsApp</p>
+    <a href="https://wa.me/5511973530654?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Ho%20Sushi%20Bar." class="btn" target="_blank" rel="noopener">
+      (11) 97353-0654 &nbsp;→
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo-ft">Ho 寿司 Bar</div>
+    <p>© 2026 Ho Sushi Bar · Moema, São Paulo · Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
